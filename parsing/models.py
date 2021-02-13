@@ -2,9 +2,9 @@ from django.db import models
 from django.utils import timezone
 
 
-class Articles(models.Model):
+class Post(models.Model):
     '''
-    pass
+    Model post for db
     '''
     title = models.CharField(max_length=250)
     url = models.CharField(max_length=250, unique=True)
@@ -15,6 +15,3 @@ class Articles(models.Model):
 
     class Meta:
         ordering = ['title']
-
-    class Admin:
-        pass
