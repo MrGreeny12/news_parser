@@ -1,9 +1,9 @@
 from django.urls import path
-from .views import PostView
+from .views import PostsView
 
 
 app_name = 'parsing'
 
 urlpatterns = [
-    path('posts', PostView.as_view()),
+    path('posts', PostsView.as_view()),
 ]
