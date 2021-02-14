@@ -4,15 +4,14 @@ from bs4 import BeautifulSoup
 from parsing.models import Post
 
 
-class Command(BaseCommand):
+class Parse(BaseCommand):
     help = 'collect articles'
 
     def handle(self, *args, **options):
         # collecting html data
-        html = urlopen('https://news.ycombinator.com/newest')
+        html = urlopen('https://news.ycombinator.com/news')
         soup = BeautifulSoup(html, 'html.parser')
         posts = soup.find_all('a', class_='storylink')
-
         for post in posts:
             # checking count of posts
             if len(posts) < 31:
